@@ -63,3 +63,9 @@ docs/                            the project page (GitHub Pages)
 
 Everything we fly follows the NAR/Tripoli safety codes and our range safety officer's calls. Simulations here are
 design tools, not a substitute for a flight review.
+
+## License
+
+Designs and documents (OpenRocket, CAD, analysis) are [CC BY 4.0](LICENSES/CC-BY-4.0.txt): use them for anything, just
+give credit. Code in `tools/` is [MIT](LICENSES/MIT.txt). The club name and logo aren't licensed for reuse. Details
+in [LICENSE.md](LICENSE.md).

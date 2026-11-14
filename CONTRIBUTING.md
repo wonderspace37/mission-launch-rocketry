@@ -48,3 +48,8 @@ they used. The scripts in `tools/openrocket/` reproduce the numbers.
 - Anything export-controlled or someone else's proprietary data.
 - Personal info beyond what members are happy to show publicly (this repo is public).
 - Big generated files (sliced G-code, renders over a few MB). Link to them instead.
+
+## Licensing
+
+By opening a pull request you agree your contribution is licensed like the rest of the repo: CC BY 4.0 for designs
+and documents, MIT for code. See [LICENSE.md](LICENSE.md).
