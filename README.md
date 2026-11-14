@@ -22,7 +22,7 @@ simulate, build and launch rockets. No experience required.
 
 | Project | What it is | Status |
 |---|---|---|
-| [**Yellow Jacket**](yellow-jacket) | Two-stage 58 mm high-power rocket, H219T booster + H100W sustainer, ~5,100 ft simulated | Design rework (Nov 2026) |
+| [**Yellow Jacket**](yellow-jacket) | Two-stage 58 mm high-power rocket, H219T booster + H100W sustainer, ~5,100 ft simulated | Design rework (Nov 2026): av bay v2 + printed nose done, booster fins next |
 
 ## What's where
 
@@ -32,6 +32,7 @@ yellow-jacket/
   cad/onshape/                   STEP snapshots from Onshape + previews + parts.md + manifest.json
   analysis/                      design reviews and simulation results
 tools/
+  cad/                           FreeCAD scripts: av bay v2 sled, printed nose cone, drawings
   onshape_export.py              pull CAD from Onshape into STEP files
   step_preview.py                sizes, volumes and preview images for STEP files (FreeCAD)
   openrocket/                    run OpenRocket headless: margins, flights, sweeps

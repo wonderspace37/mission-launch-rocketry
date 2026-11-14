@@ -1,16 +1,18 @@
 # Yellow Jacket
 
 Mission Launch Rocketry's two-stage high-power rocket: a 58 mm, 1.47 m stack with an H219T booster and an H100W
-sustainer that lights in flight. **Status (Nov 2026): design rework in progress.**
+sustainer that lights in flight. **Status (Nov 2026): design rework in progress.** Latest:
+[av bay v2, printed nose cone v2 and the chute swap](analysis/avbay-v2-2026-11-14.md).
 
 | | |
 |---|---|
-| Diameter / length | 58 mm (2.15" tube) / 1,468 mm |
-| Liftoff mass | 1,885 g |
+| Diameter / length | 58 mm (2.15" tube) / 1,417 mm (v2: printed 190 mm nose) |
+| Liftoff mass | 1,883 g (v2, incl. the measured +63 g on the upper stage) |
 | Booster | AeroTech H219T (38 mm, 235 Ns) |
 | Sustainer | AeroTech H100W DMS (38 mm, 228 Ns), lit by timer at launch + 4 s |
-| Simulated apogee | ~5,100 ft (OpenRocket, 2 m/s wind) |
-| Recovery | dual deploy: 18" drogue at apogee, 36" main at 1,500 ft; 24" booster chute |
+| Simulated apogee | ~5,170 ft (OpenRocket, 2 m/s wind) |
+| Avionics | Blue Raven 2 on one 1S LiPo, RunCam Thumb Pro W on a fused 5 V boost, one switch |
+| Recovery | dual deploy around the av bay: 18" drogue aft (Raven Apo/3rd + motor backup), 36" main in the nose section (Raven Main/4th); 24" booster chute |
 
 ## Files
 
@@ -18,6 +20,8 @@ sustainer that lights in flight. **Status (Nov 2026): design rework in progress.
 |---|---|
 | [`openrocket/yellow-jacket.ork`](openrocket/yellow-jacket.ork) | The OpenRocket design. One file; its history is in git (`git log --follow`). |
 | [`cad/onshape/`](cad/onshape) | STEP snapshots of every part in the club's Onshape folder, with previews and [`parts.md`](cad/onshape/parts.md) (sizes, volumes, links back to Onshape). [`manifest.json`](cad/onshape/manifest.json) records where and when each was exported. |
+| [`cad/avbay-v2/`](cad/avbay-v2) | Sled v2 (STEP/STL), layout with every part in the 147 mm coupler, fit check, [drawing + wiring](cad/avbay-v2/avbay-v2-drawing.png). Built by [`tools/cad/build_avbay_nose.py`](../tools/cad/build_avbay_nose.py). |
+| [`cad/nose-cone-v2/`](cad/nose-cone-v2) | Printed Von Kármán nose with the pin tether (STEP/STL), [drawing](cad/nose-cone-v2/nose-cone-v2-drawing.png), printmass reports. |
 | [`analysis/`](analysis) | Reviews and sims. Start with [`baseline-2026-11-13.md`](analysis/baseline-2026-11-13.md). |
 
 **Heads-up:** the saved .ork has the booster stage switched off in its default flight configuration, so its stored
@@ -40,11 +44,12 @@ changes the liftoff margin from 0.81 to 1.82 calibers. See the [baseline review]
 
 ## Open items for the rework
 
-- Fin sizes: make the .ork and the CAD agree, then size for at least 1 caliber off the rail in the wind we fly in.
-- Sustainer fins: 0.80 cal at ignition in the .ork, 0.67 with the CAD fin can.
+- **Booster fins (next):** v2 is still only 0.31 cal off a 6 ft rail in a 4 m/s wind. Make the .ork and the CAD agree,
+  then size for at least 1 caliber off the rail.
 - Booster chute: deploy at booster apogee, not at separation (69.5 m/s).
-- Main deploy altitude: 1,500 ft drifts about 600 m in a 4 m/s wind.
-- Model gaps: booster fin mass, av-bay window mass, interstage coupler.
+- Main deploy altitude: the .ork says 1,500 ft, the Blue Raven default is 700 ft; pick one.
+- Weigh the v2 parts and find the upper stage's balance point (it weighs 63 g more than the model).
+- Done in v2: av bay and power, nose cone (COTS one out of stock), sustainer margin 0.80 → 1.20.
 
 ## History
 
@@ -54,3 +59,4 @@ changes the liftoff margin from 0.81 to 1.82 calibers. See the [baseline review]
 | Aug 22, 2026 | Booster motor changed to the H219T |
 | Nov 13, 2026 | Heavier chutes, 75 g booster mass; booster stage left off in the default config |
 | Nov 14, 2026 | Repo reorganized; CAD exported from Onshape; baseline review |
+| Nov 14, 2026 | Av bay v2 + printed nose cone v2 + main/drogue swap + measured upper-stage mass (branch `avbay-v2`) |
