@@ -1,0 +1,215 @@
+{
+ "403251906b89431bd729f945": {
+  "name": "Nose cone",
+  "folder": "nose-cone",
+  "url": "https://cad.onshape.com/documents/403251906b89431bd729f945/w/6e691212f36793b7e3c31172",
+  "public": true,
+  "owner": "Aman Sirigineedi",
+  "created_by": "Aman Sirigineedi",
+  "modified_at": "2026-11-07T02:36:13.094+00:00",
+  "modified_by": "Aman Sirigineedi",
+  "tabs": [
+   {
+    "name": "Part Studio 1",
+    "type": "PARTSTUDIO",
+    "element_id": "9597680d4e758f1c545831df",
+    "error": null,
+    "exported_at": "2026-11-14T04:39:19+00:00",
+    "files": [
+     "part-studio-1--part-1.step"
+    ]
+   },
+   {
+    "name": "Assembly 1",
+    "type": "ASSEMBLY",
+    "element_id": "8aed25d190a6886b212d59e3",
+    "error": "No valid parts were found for export.",
+    "exported_at": "2026-11-14T04:39:19+00:00",
+    "files": []
+   }
+  ]
+ },
+ "1e779da9001577f724ec5ac9": {
+  "name": "blast_absorber",
+  "folder": "blast-absorber",
+  "url": "https://cad.onshape.com/documents/1e779da9001577f724ec5ac9/w/9c8694aa7aef5c261e976bf7",
+  "public": true,
+  "owner": "Aman Sirigineedi",
+  "created_by": "Aman Sirigineedi",
+  "modified_at": "2026-03-30T03:18:01.611+00:00",
+  "modified_by": "Aman Sirigineedi",
+  "tabs": [
+   {
+    "name": "Part Studio 1",
+    "type": "PARTSTUDIO",
+    "element_id": "94311a6794af524f64d6c916",
+    "error": null,
+    "exported_at": "2026-11-14T04:39:24+00:00",
+    "files": [
+     "part-studio-1--part-1.step"
+    ]
+   },
+   {
+    "name": "Assembly 1",
+    "type": "ASSEMBLY",
+    "element_id": "1e2b417c0e54308db10aab63",
+    "error": "No valid parts were found for export.",
+    "exported_at": "2026-11-14T04:39:25+00:00",
+    "files": []
+   }
+  ]
+ },
+ "9326782fdec3a25107ad14a0": {
+  "name": "Upper Stage (Real)",
+  "folder": "upper-stage-real",
+  "url": "https://cad.onshape.com/documents/9326782fdec3a25107ad14a0/w/d80940868c25c5cec2edee74",
+  "public": true,
+  "owner": "Aman Sirigineedi",
+  "created_by": "Bryan Pham",
+  "modified_at": "2026-02-24T16:22:43.077+00:00",
+  "modified_by": "Bryan Pham",
+  "tabs": [
+   {
+    "name": "Part Studio 1",
+    "type": "PARTSTUDIO",
+    "element_id": "0b4e4fe4f095e486eed96b72",
+    "error": null,
+    "exported_at": "2026-11-14T04:39:29+00:00",
+    "files": [
+     "part-studio-1--tube.step"
+    ]
+   },
+   {
+    "name": "Assembly 1",
+    "type": "ASSEMBLY",
+    "element_id": "60341414d702d53d637153e6",
+    "error": "No valid parts were found for export.",
+    "exported_at": "2026-11-14T04:39:29+00:00",
+    "files": []
+   }
+  ]
+ },
+ "4ca3fee37e2012109908dee1": {
+  "name": "Upper Stage",
+  "folder": "upper-stage",
+  "url": "https://cad.onshape.com/documents/4ca3fee37e2012109908dee1/w/6fbd0f4a22402b0e0d50d236",
+  "public": true,
+  "owner": "Aman Sirigineedi",
+  "created_by": "Bryan Pham",
+  "modified_at": "2026-02-20T23:46:01.996+00:00",
+  "modified_by": "Bryan Pham",
+  "tabs": [
+   {
+    "name": "Part Studio 1",
+    "type": "PARTSTUDIO",
+    "element_id": "77ee7416964222ca93932b95",
+    "error": null,
+    "exported_at": "2026-11-14T04:39:34+00:00",
+    "files": [
+     "part-studio-1--fin-4.step",
+     "part-studio-1--fin-3.step",
+     "part-studio-1--tube.step",
+     "part-studio-1--fin-1.step",
+     "part-studio-1--fin-2.step"
+    ]
+   },
+   {
+    "name": "Assembly 1",
+    "type": "ASSEMBLY",
+    "element_id": "3acfaf55d6fa4a6249fd2fd8",
+    "error": "No valid parts were found for export.",
+    "exported_at": "2026-11-14T04:39:35+00:00",
+    "files": []
+   }
+  ]
+ },
+ "eb1e5616c0da5e854cb62af4": {
+  "name": "Upper Stage",
+  "folder": "upper-stage-eb1e56",
+  "url": "https://cad.onshape.com/documents/eb1e5616c0da5e854cb62af4/w/adb53755266cd2a2d2145e62",
+  "public": true,
+  "owner": "Aman Sirigineedi",
+  "created_by": "Bryan Pham",
+  "modified_at": "2026-02-20T23:43:35.480+00:00",
+  "modified_by": "Bryan Pham",
+  "tabs": [
+   {
+    "name": "Part Studio 1",
+    "type": "PARTSTUDIO",
+    "element_id": "3a9948afc56ea84195786087",
+    "error": "No visible parts to export",
+    "exported_at": "2026-11-14T04:39:36+00:00",
+    "files": []
+   },
+   {
+    "name": "Assembly 1",
+    "type": "ASSEMBLY",
+    "element_id": "d9e6bf459a623984915dd1b3",
+    "error": "No valid parts were found for export.",
+    "exported_at": "2026-11-14T04:39:36+00:00",
+    "files": []
+   }
+  ]
+ },
+ "3a234e593d42b7f22c6d8ed4": {
+  "name": "Lower Stage",
+  "folder": "lower-stage",
+  "url": "https://cad.onshape.com/documents/3a234e593d42b7f22c6d8ed4/w/d731ea35abd4a87237f4b7bf",
+  "public": true,
+  "owner": "Aman Sirigineedi",
+  "created_by": "Aman Sirigineedi",
+  "modified_at": "2026-06-30T07:15:44.176+00:00",
+  "modified_by": "Isaiah Tracy",
+  "tabs": [
+   {
+    "name": "Part Studio 1",
+    "type": "PARTSTUDIO",
+    "element_id": "343b06328eb3cf441002592a",
+    "error": null,
+    "exported_at": "2026-11-14T04:40:19+00:00",
+    "files": [
+     "part-studio-1--tube-1.step",
+     "part-studio-1--tube.step"
+    ]
+   },
+   {
+    "name": "Assembly 1",
+    "type": "ASSEMBLY",
+    "element_id": "c2e49cb16752fa80f7afbb5c",
+    "error": "No valid parts were found for export.",
+    "exported_at": "2026-11-14T04:40:20+00:00",
+    "files": []
+   }
+  ]
+ },
+ "d694864bc20f59b94844fe15": {
+  "name": "Fin Jig",
+  "folder": "fin-jig",
+  "url": "https://cad.onshape.com/documents/d694864bc20f59b94844fe15/w/60798a3776a57415a46224ca",
+  "public": true,
+  "owner": "Aman Sirigineedi",
+  "created_by": "Aman Sirigineedi",
+  "modified_at": "2026-02-16T23:19:32.315+00:00",
+  "modified_by": "Bryan Pham",
+  "tabs": [
+   {
+    "name": "Part Studio 1",
+    "type": "PARTSTUDIO",
+    "element_id": "afee4b159771ceaac81c7a3a",
+    "error": null,
+    "exported_at": "2026-11-14T04:40:25+00:00",
+    "files": [
+     "part-studio-1--part-1.step"
+    ]
+   },
+   {
+    "name": "Assembly 1",
+    "type": "ASSEMBLY",
+    "element_id": "946ea0f721076568ba291985",
+    "error": "No valid parts were found for export.",
+    "exported_at": "2026-11-14T04:40:25+00:00",
+    "files": []
+   }
+  ]
+ }
+}
