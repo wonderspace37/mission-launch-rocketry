@@ -23,7 +23,7 @@
   "parts": [
     {
       "name": "sled-v2",
-      "source": "/Users/aman/Desktop/MLR/mission-launch-rocketry/yellow-jacket/cad/avbay-v2/sled-v2.stl",
+      "source": "yellow-jacket/cad/avbay-v2/sled-v2.stl",
       "units_in": "mm",
       "print_rotation_deg_xyz": [
         90.0,

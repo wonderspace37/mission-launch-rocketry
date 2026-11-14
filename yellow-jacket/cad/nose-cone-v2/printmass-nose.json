@@ -23,7 +23,7 @@
   "parts": [
     {
       "name": "nose-cone-v2",
-      "source": "/Users/aman/Desktop/MLR/mission-launch-rocketry/yellow-jacket/cad/nose-cone-v2/nose-cone-v2.stl",
+      "source": "yellow-jacket/cad/nose-cone-v2/nose-cone-v2.stl",
       "units_in": "mm",
       "print_rotation_deg_xyz": [
         0.0,
