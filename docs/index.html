@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLR Project Files</title>
+<meta name="description" content="Mission Launch Rocketry's design files: OpenRocket simulations, CAD and analysis for Yellow Jacket, our two-stage high-power rocket. Version-controlled and open.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="assets/img/icon-512.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:title" content="Mission Launch Rocketry: project files">
+<meta property="og:description" content="OpenRocket, CAD and analysis for Yellow Jacket, our two-stage high-power rocket.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #08090b; --bg-1: #0c0e11; --bg-2: #111318;
+  --line: rgba(255,255,255,.08); --line-mid: rgba(255,255,255,.14); --line-hi: rgba(255,255,255,.28);
+  --fg: #f4f5f7; --fg-2: #a2a9b4; --fg-3: #6b727d;
+  --brand: #015b8f; --brand-hi: #0a72ae;
+  --accent: #2f9ada; --accent-hi: #57aee3; --accent-dim: rgba(47,154,218,.14); --accent-line: rgba(47,154,218,.38);
+  --sans: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --gutter: clamp(16px, 5vw, 56px); --maxw: 1180px; --r: 4px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.6;
+       letter-spacing: -.011em; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hi); }
+img { display: block; max-width: 100%; }
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+.mono { font-family: var(--mono); font-size: .82em; letter-spacing: 0; }
+.kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+
+/* nav */
+nav { position: sticky; top: 0; z-index: 10; background: rgba(8,9,11,.82); backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--fg); font-weight: 600; white-space: nowrap; }
+.brand img { width: 30px; height: 30px; }
+.brand span { color: var(--fg-3); font-weight: 500; }
+nav ul { display: flex; gap: 22px; list-style: none; font-size: 14px; }
+nav ul a { color: var(--fg-2); }
+nav ul a:hover { color: var(--fg); }
+@media (max-width: 720px) { nav ul li:not(:last-child) { display: none; } }
+
+/* hero */
+.hero { padding: clamp(56px, 9vw, 112px) 0 clamp(40px, 6vw, 72px); border-bottom: 1px solid var(--line);
+        background: radial-gradient(900px 380px at 70% 0%, rgba(1,91,143,.22), transparent 70%); }
+.hero h1 { font-size: clamp(36px, 6.2vw, 68px); line-height: 1.02; letter-spacing: -.035em; font-weight: 650;
+           margin: 18px 0 20px; max-width: 14ch; }
+.hero p.lede { color: var(--fg-2); font-size: clamp(17px, 2vw, 19px); max-width: 58ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: var(--r);
+       font-weight: 600; font-size: 15px; border: 1px solid var(--line-mid); color: var(--fg); background: var(--bg-1);
+       transition: border-color .15s, background .15s; }
+.btn:hover { border-color: var(--line-hi); color: var(--fg); }
+.btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+.btn.primary:hover { background: var(--brand-hi); border-color: var(--brand-hi); }
+.btn svg { width: 16px; height: 16px; }
+.profile { margin-top: clamp(40px, 6vw, 72px); color: var(--accent); }
+.profile svg { width: 100%; height: auto; display: block; overflow: visible; }
+.profile svg path, .profile svg line { vector-effect: non-scaling-stroke; stroke-width: 1.5px; }
+.profile svg path { fill: rgba(47,154,218,.07); }
+.profile svg line { stroke-width: 1px; }
+.profile .scale { display: flex; justify-content: space-between; margin-top: 10px; color: var(--fg-3); font-family: var(--mono);
+                  font-size: 12px; border-top: 1px solid var(--line-mid); padding-top: 8px; gap: 16px; text-align: center; }
+@media (max-width: 560px) { .profile .scale { justify-content: center; }
+  .profile .scale span:first-child, .profile .scale span:last-child { display: none; } }
+
+/* sections */
+section { padding: clamp(56px, 8vw, 96px) 0; border-bottom: 1px solid var(--line); }
+section h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -.03em; line-height: 1.1; font-weight: 650; margin: 12px 0 14px; }
+section .intro { color: var(--fg-2); max-width: 62ch; margin-bottom: 36px; }
+
+/* specs */
+.specs { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line);
+         border-radius: var(--r); overflow: hidden; margin-right: -1px; }
+@media (max-width: 720px) { .specs { grid-template-columns: repeat(2, 1fr); } .spec dd { font-size: 20px; } }
+.spec { padding: 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-1); }
+.spec dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-3); }
+.spec dd { font-size: 24px; font-weight: 600; letter-spacing: -.02em; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.spec dd small { font-size: 14px; color: var(--fg-2); font-weight: 500; margin-left: 4px; }
+.note { margin-top: 20px; padding: 16px 18px; border: 1px solid var(--accent-line); background: var(--accent-dim);
+        border-radius: var(--r); color: var(--fg); font-size: 15px; }
+.note b { color: var(--accent-hi); font-weight: 600; }
+
+/* parts */
+.parts { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.part { border: 1px solid var(--line); border-radius: var(--r); background: var(--bg-1); display: flex; flex-direction: column;
+        transition: border-color .15s; }
+.part:hover { border-color: var(--line-mid); }
+.part .img { aspect-ratio: 4 / 3; display: grid; place-items: center; padding: 14px; border-bottom: 1px solid var(--line);
+             background: radial-gradient(circle at 50% 45%, rgba(47,154,218,.10), transparent 70%); }
+.part .img img { max-height: 100%; object-fit: contain; }
+.part .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.part h3 { font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+.part p { color: var(--fg-2); font-size: 14px; }
+.part .links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: auto; padding-top: 10px; font-family: var(--mono); font-size: 12.5px; }
+@media (max-width: 560px) { .parts { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .part .body { padding: 12px; } .part h3 { font-size: 15px; } .part p { font-size: 13px; } }
+
+/* files */
+.files { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 1000px) { .files { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .files { grid-template-columns: 1fr; } }
+.file { border: 1px solid var(--line); border-radius: var(--r); padding: 22px; background: var(--bg-1); display: flex;
+        flex-direction: column; gap: 8px; color: var(--fg); transition: border-color .15s, transform .15s; }
+.file:hover { border-color: var(--accent-line); color: var(--fg); transform: translateY(-1px); }
+.file .tag { font-family: var(--mono); font-size: 12px; color: var(--accent); }
+.file h3 { font-size: 18px; font-weight: 600; }
+.file p { color: var(--fg-2); font-size: 14.5px; }
+
+/* steps */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-top: 1px solid var(--line-mid); counter-reset: step; }
+.step { padding: 22px 22px 6px 0; }
+.step::before { counter-increment: step; content: "0" counter(step); font-family: var(--mono); font-size: 12px; color: var(--accent); }
+.step h3 { font-size: 18px; font-weight: 600; margin: 8px 0 6px; }
+.step p { color: var(--fg-2); font-size: 14.5px; }
+.step code, .intro code { font-family: var(--mono); font-size: 12.5px; background: var(--bg-2); border: 1px solid var(--line);
+                          padding: 1px 6px; border-radius: 3px; color: var(--fg); white-space: nowrap; }
+
+/* footer */
+footer { padding: 48px 0 64px; color: var(--fg-3); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+footer img { width: 220px; }
+footer ul { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; }
+footer ul a { color: var(--fg-2); }
+footer p { width: 100%; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/img/mlr-emblem.png" alt="">MLR <span>project files</span></a>
+    <ul>
+      <li><a href="#yellow-jacket">Yellow Jacket</a></li>
+      <li><a href="#parts">Parts</a></li>
+      <li><a href="#files">Files</a></li>
+      <li><a href="#workflow">How we work</a></li>
+      <li><a href="https://github.com/wonderspace37/mission-launch-rocketry">GitHub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="kicker">Mission Launch Rocketry · Mission College, Santa Clara</div>
+    <h1>Every design, every version, one place.</h1>
+    <p class="lede">The OpenRocket sims, CAD and analysis behind our rockets, kept in git so anyone in the club can see what
+      changed, when and why. Open to read, download and learn from.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/wonderspace37/mission-launch-rocketry">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        Browse on GitHub</a>
+      <a class="btn" href="https://github.com/wonderspace37/mission-launch-rocketry/archive/refs/heads/main.zip">Download everything (.zip)</a>
+      <a class="btn" href="https://mission-launch-rocketry.vercel.app">Club website</a>
+    </div>
+    <figure class="profile" aria-label="Yellow Jacket side profile">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 143" role="img" aria-label="Yellow Jacket side profile, 1468 mm long">
+<g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M1413.8,40.8 L1473.8,15.8 L1473.8,40.8 Z"/><path d="M1413.8,102.0 L1473.8,127.0 L1473.8,102.0 Z"/><path d="M1054.3,42.5 L1114.3,6.0 L1114.3,42.5 Z"/><path d="M1054.3,100.3 L1114.3,136.8 L1114.3,100.3 Z"/><path d="M6.0,71.4 L10.0,70.4 L14.0,69.5 L18.1,68.5 L22.1,67.6 L26.1,66.7 L30.1,65.8 L34.2,65.0 L38.2,64.1 L42.2,63.3 L46.2,62.5 L50.2,61.7 L54.3,60.9 L58.3,60.1 L62.3,59.4 L66.3,58.7 L70.3,57.9 L74.4,57.2 L78.4,56.6 L82.4,55.9 L86.4,55.2 L90.5,54.6 L94.5,54.0 L98.5,53.4 L102.5,52.8 L106.5,52.2 L110.6,51.7 L114.6,51.2 L118.6,50.6 L122.6,50.1 L126.6,49.6 L130.7,49.2 L134.7,48.7 L138.7,48.3 L142.7,47.9 L146.8,47.5 L150.8,47.1 L154.8,46.7 L158.8,46.3 L162.8,46.0 L166.9,45.7 L170.9,45.4 L174.9,45.1 L178.9,44.8 L183.0,44.5 L187.0,44.3 L191.0,44.1 L195.0,43.8 L199.0,43.6 L203.1,43.5 L207.1,43.3 L211.1,43.1 L215.1,43.0 L219.1,42.9 L223.2,42.8 L227.2,42.7 L231.2,42.6 L235.2,42.6 L239.3,42.5 L243.3,42.5 L247.3,42.5 L247.3,42.5 L546.3,42.5 L546.3,42.5 L586.3,42.5 L586.3,42.5 L914.3,42.5 L914.3,42.5 L964.3,42.5 L964.3,42.5 L1114.3,42.5 L1114.3,42.5 L1364.3,42.5 L1364.3,42.5 L1364.6,42.5 L1365.0,42.4 L1365.3,42.4 L1365.6,42.4 L1365.9,42.4 L1366.2,42.3 L1366.6,42.3 L1366.9,42.3 L1367.2,42.2 L1367.5,42.2 L1367.9,42.2 L1368.2,42.2 L1368.5,42.1 L1368.8,42.1 L1369.2,42.1 L1369.5,42.0 L1369.8,42.0 L1370.1,42.0 L1370.5,42.0 L1370.8,41.9 L1371.1,41.9 L1371.5,41.9 L1371.8,41.8 L1372.1,41.8 L1372.4,41.8 L1372.8,41.8 L1373.1,41.7 L1373.4,41.7 L1373.7,41.7 L1374.0,41.7 L1374.4,41.6 L1374.7,41.6 L1375.0,41.6 L1375.3,41.5 L1375.7,41.5 L1376.0,41.5 L1376.3,41.5 L1376.6,41.4 L1377.0,41.4 L1377.3,41.4 L1377.6,41.3 L1378.0,41.3 L1378.3,41.3 L1378.6,41.3 L1378.9,41.2 L1379.2,41.2 L1379.6,41.2 L1379.9,41.1 L1380.2,41.1 L1380.5,41.1 L1380.9,41.1 L1381.2,41.0 L1381.5,41.0 L1381.8,41.0 L1382.2,40.9 L1382.5,40.9 L1382.8,40.9 L1383.1,40.9 L1383.5,40.8 L1383.8,40.8 L1383.8,40.8 L1473.8,40.8 L1473.8,102.0 L1383.8,102.0 L1383.8,102.0 L1383.5,102.0 L1383.1,101.9 L1382.8,101.9 L1382.5,101.9 L1382.2,101.9 L1381.8,101.8 L1381.5,101.8 L1381.2,101.8 L1380.9,101.7 L1380.5,101.7 L1380.2,101.7 L1379.9,101.7 L1379.6,101.6 L1379.2,101.6 L1378.9,101.6 L1378.6,101.5 L1378.3,101.5 L1378.0,101.5 L1377.6,101.5 L1377.3,101.4 L1377.0,101.4 L1376.6,101.4 L1376.3,101.3 L1376.0,101.3 L1375.7,101.3 L1375.3,101.3 L1375.0,101.2 L1374.7,101.2 L1374.4,101.2 L1374.0,101.2 L1373.7,101.1 L1373.4,101.1 L1373.1,101.1 L1372.8,101.0 L1372.4,101.0 L1372.1,101.0 L1371.8,101.0 L1371.5,100.9 L1371.1,100.9 L1370.8,100.9 L1370.5,100.8 L1370.1,100.8 L1369.8,100.8 L1369.5,100.8 L1369.2,100.7 L1368.8,100.7 L1368.5,100.7 L1368.2,100.6 L1367.9,100.6 L1367.5,100.6 L1367.2,100.6 L1366.9,100.5 L1366.6,100.5 L1366.2,100.5 L1365.9,100.4 L1365.6,100.4 L1365.3,100.4 L1365.0,100.4 L1364.6,100.3 L1364.3,100.3 L1364.3,100.3 L1114.3,100.3 L1114.3,100.3 L964.3,100.3 L964.3,100.3 L914.3,100.3 L914.3,100.3 L586.3,100.3 L586.3,100.3 L546.3,100.3 L546.3,100.3 L247.3,100.3 L247.3,100.3 L243.3,100.3 L239.3,100.3 L235.2,100.2 L231.2,100.2 L227.2,100.1 L223.2,100.0 L219.1,99.9 L215.1,99.8 L211.1,99.7 L207.1,99.5 L203.1,99.3 L199.0,99.2 L195.0,99.0 L191.0,98.7 L187.0,98.5 L183.0,98.3 L178.9,98.0 L174.9,97.7 L170.9,97.4 L166.9,97.1 L162.8,96.8 L158.8,96.5 L154.8,96.1 L150.8,95.7 L146.8,95.3 L142.7,94.9 L138.7,94.5 L134.7,94.1 L130.7,93.6 L126.6,93.2 L122.6,92.7 L118.6,92.2 L114.6,91.6 L110.6,91.1 L106.5,90.6 L102.5,90.0 L98.5,89.4 L94.5,88.8 L90.5,88.2 L86.4,87.6 L82.4,86.9 L78.4,86.2 L74.4,85.6 L70.3,84.9 L66.3,84.1 L62.3,83.4 L58.3,82.7 L54.3,81.9 L50.2,81.1 L46.2,80.3 L42.2,79.5 L38.2,78.7 L34.2,77.8 L30.1,77.0 L26.1,76.1 L22.1,75.2 L18.1,74.3 L14.0,73.3 L10.0,72.4 L6.0,71.4 Z"/></g>
+<g stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".55"><line x1="546.3" y1="40.4" x2="546.3" y2="102.4"/><line x1="586.3" y1="40.4" x2="586.3" y2="102.4"/><line x1="1114.3" y1="40.4" x2="1114.3" y2="102.4"/></g>
+</svg>
+      <figcaption class="scale"><span>nose</span><span>Yellow Jacket · 1,468 mm · drawn from the .ork</span><span>booster</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<section id="yellow-jacket">
+  <div class="wrap">
+    <div class="kicker">Current build</div>
+    <h2>Yellow Jacket</h2>
+    <p class="intro">Our two-stage high-power rocket. The H219T booster burns for about a second, the stages separate, and
+      the H100W sustainer lights in flight four seconds after launch. Dual-deploy recovery, independent avionics bay.</p>
+    <dl class="specs">
+      <div class="spec"><dt>Stages</dt><dd>2</dd></div>
+      <div class="spec"><dt>Diameter</dt><dd>58<small>mm</small></dd></div>
+      <div class="spec"><dt>Length</dt><dd>1,468<small>mm</small></dd></div>
+      <div class="spec"><dt>Liftoff mass</dt><dd>1,885<small>g</small></dd></div>
+      <div class="spec"><dt>Booster</dt><dd>H219T</dd></div>
+      <div class="spec"><dt>Sustainer</dt><dd>H100W</dd></div>
+      <div class="spec"><dt>Sim apogee</dt><dd>~5,100<small>ft</small></dd></div>
+      <div class="spec"><dt>Top speed</dt><dd>Mach 0.56</dd></div>
+    </dl>
+    <p class="note"><b>Design rework in progress (Nov 2026).</b> The baseline review found the stack is under one caliber
+      stable off the rail in a light crosswind, and the CAD and OpenRocket fins don't match.
+      <a href="https://github.com/wonderspace37/mission-launch-rocketry/blob/main/yellow-jacket/analysis/baseline-2026-11-13.md">Read the review →</a></p>
+  </div>
+</section>
+
+<section id="parts">
+  <div class="wrap">
+    <div class="kicker">CAD</div>
+    <h2>Parts</h2>
+    <p class="intro">Modeled in Onshape, exported to STEP so they open in any CAD tool. Sizes and volumes are in
+      <a href="https://github.com/wonderspace37/mission-launch-rocketry/blob/main/yellow-jacket/cad/onshape/parts.md">parts.md</a>.</p>
+    <div class="parts">
+      <article class="part">
+        <div class="img"><img src="assets/parts/upper-stage-real--tube.png" alt="Upper stage fin can preview" loading="lazy"></div>
+        <div class="body"><h3>Upper stage fin can</h3><p>Upper Stage (Real) · 57.2 mm body, four 75 × 35 mm fins, 101 mm long</p>
+          <div class="links"><a href="https://github.com/wonderspace37/mission-launch-rocketry/raw/main/yellow-jacket/cad/onshape/upper-stage-real/part-studio-1--tube.step">STEP ↓</a><a href="https://cad.onshape.com/documents/9326782fdec3a25107ad14a0/w/d80940868c25c5cec2edee74">Onshape ↗</a></div></div>
+      </article>
+      <article class="part">
+        <div class="img"><img src="assets/parts/lower-stage--tube.png" alt="Booster fin can preview" loading="lazy"></div>
+        <div class="body"><h3>Booster fin can</h3><p>Lower Stage · four 75 × 32 mm fins, 76 mm long</p>
+          <div class="links"><a href="https://github.com/wonderspace37/mission-launch-rocketry/raw/main/yellow-jacket/cad/onshape/lower-stage/part-studio-1--tube.step">STEP ↓</a><a href="https://cad.onshape.com/documents/3a234e593d42b7f22c6d8ed4/w/d731ea35abd4a87237f4b7bf">Onshape ↗</a></div></div>
+      </article>
+      <article class="part">
+        <div class="img"><img src="assets/parts/lower-stage--tube-1.png" alt="Booster tube preview" loading="lazy"></div>
+        <div class="body"><h3>Booster tube</h3><p>Lower Stage · 53 mm OD, 75 mm long</p>
+          <div class="links"><a href="https://github.com/wonderspace37/mission-launch-rocketry/raw/main/yellow-jacket/cad/onshape/lower-stage/part-studio-1--tube-1.step">STEP ↓</a><a href="https://cad.onshape.com/documents/3a234e593d42b7f22c6d8ed4/w/d731ea35abd4a87237f4b7bf">Onshape ↗</a></div></div>
+      </article>
+      <article class="part">
+        <div class="img"><img src="assets/parts/nose-cone--part-1.png" alt="Nose cone ring preview" loading="lazy"></div>
+        <div class="body"><h3>Nose cone ring</h3><p>Nose cone · 54.2 mm OD × 25 mm, newest part (Nov 7)</p>
+          <div class="links"><a href="https://github.com/wonderspace37/mission-launch-rocketry/raw/main/yellow-jacket/cad/onshape/nose-cone/part-studio-1--part-1.step">STEP ↓</a><a href="https://cad.onshape.com/documents/403251906b89431bd729f945/w/6e691212f36793b7e3c31172">Onshape ↗</a></div></div>
+      </article>
+      <article class="part">
+        <div class="img"><img src="assets/parts/upper-stage--tube.png" alt="Upper stage tube (draft) preview" loading="lazy"></div>
+        <div class="body"><h3>Upper stage tube (draft)</h3><p>Upper Stage, Feb 20 draft · 57.8 mm, 100 mm long</p>
+          <div class="links"><a href="https://github.com/wonderspace37/mission-launch-rocketry/raw/main/yellow-jacket/cad/onshape/upper-stage/part-studio-1--tube.step">STEP ↓</a><a href="https://cad.onshape.com/documents/4ca3fee37e2012109908dee1/w/6fbd0f4a22402b0e0d50d236">Onshape ↗</a></div></div>
+      </article>
+      <article class="part">
+        <div class="img"><img src="assets/parts/upper-stage--fin-1.png" alt="Bolt-on fin (draft) preview" loading="lazy"></div>
+        <div class="body"><h3>Bolt-on fin (draft)</h3><p>Upper Stage, Feb 20 draft · 50 × 32 mm, 3 mm thick, ×4</p>
+          <div class="links"><a href="https://github.com/wonderspace37/mission-launch-rocketry/raw/main/yellow-jacket/cad/onshape/upper-stage/part-studio-1--fin-1.step">STEP ↓</a><a href="https://cad.onshape.com/documents/4ca3fee37e2012109908dee1/w/6fbd0f4a22402b0e0d50d236">Onshape ↗</a></div></div>
+      </article>
+      <article class="part">
+        <div class="img"><img src="assets/parts/fin-jig--part-1.png" alt="Fin jig preview" loading="lazy"></div>
+        <div class="body"><h3>Fin jig</h3><p>Fin Jig · 138 mm alignment ring for gluing fins square</p>
+          <div class="links"><a href="https://github.com/wonderspace37/mission-launch-rocketry/raw/main/yellow-jacket/cad/onshape/fin-jig/part-studio-1--part-1.step">STEP ↓</a><a href="https://cad.onshape.com/documents/d694864bc20f59b94844fe15/w/60798a3776a57415a46224ca">Onshape ↗</a></div></div>
+      </article>
+      <article class="part">
+        <div class="img"><img src="assets/parts/blast-absorber--part-1.png" alt="Blast absorber preview" loading="lazy"></div>
+        <div class="body"><h3>Blast absorber</h3><p>blast_absorber · 38 mm disc, 3 mm thick</p>
+          <div class="links"><a href="https://github.com/wonderspace37/mission-launch-rocketry/raw/main/yellow-jacket/cad/onshape/blast-absorber/part-studio-1--part-1.step">STEP ↓</a><a href="https://cad.onshape.com/documents/1e779da9001577f724ec5ac9/w/9c8694aa7aef5c261e976bf7">Onshape ↗</a></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="files">
+  <div class="wrap">
+    <div class="kicker">Downloads</div>
+    <h2>Get the files</h2>
+    <p class="intro">Everything is plain files. Grab one, or clone the repo to work on the design.</p>
+    <div class="files">
+      <a class="file" href="https://github.com/wonderspace37/mission-launch-rocketry/raw/main/yellow-jacket/openrocket/yellow-jacket.ork">
+        <span class="tag">.ork · OpenRocket 23.09+</span><h3>OpenRocket design</h3>
+        <p>The full two-stage model with motors, recovery and sims. Every saved version is in the git history.</p></a>
+      <a class="file" href="https://github.com/wonderspace37/mission-launch-rocketry/tree/main/yellow-jacket/cad/onshape">
+        <span class="tag">.step · any CAD</span><h3>CAD snapshots</h3>
+        <p>Every part from our Onshape folder, with previews and a manifest that traces each file back to Onshape.</p></a>
+      <a class="file" href="https://github.com/wonderspace37/mission-launch-rocketry/tree/main/yellow-jacket/analysis">
+        <span class="tag">.md · reviews</span><h3>Analysis</h3>
+        <p>Stability, wind, rail and fin-size studies, with the numbers and how to rerun them.</p></a>
+      <a class="file" href="https://github.com/wonderspace37/mission-launch-rocketry/tree/main/tools">
+        <span class="tag">.py · tools</span><h3>Tools</h3>
+        <p>Run OpenRocket headless, pull CAD from Onshape, measure STEP parts, and read .ork changes in git diff.</p></a>
+    </div>
+  </div>
+</section>
+
+<section id="workflow">
+  <div class="wrap">
+    <div class="kicker">Version control</div>
+    <h2>How we work</h2>
+    <p class="intro">One file per design, edited in place. No more <code>rocket (3).ork</code>: git remembers every version.</p>
+    <div class="steps">
+      <div class="step"><h3>Branch</h3><p>Start a branch named after the change, like <code>fin-resize</code>.</p></div>
+      <div class="step"><h3>Change one thing</h3><p>Edit the .ork, export new CAD, or add a sim result.</p></div>
+      <div class="step"><h3>Commit with a reason</h3><p>Say why, not just what: the history is for whoever reads it next year.</p></div>
+      <div class="step"><h3>Open a pull request</h3><p>Someone else looks it over before it merges to <code>main</code>.</p></div>
+    </div>
+    <p class="intro" style="margin:28px 0 0">The full guide is in
+      <a href="https://github.com/wonderspace37/mission-launch-rocketry/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/img/mlr-lockup.png" alt="Mission Launch Rocketry">
+    <ul>
+      <li><a href="https://mission-launch-rocketry.vercel.app">Website</a></li>
+      <li><a href="https://instagram.com/missionlaunchrocketry">Instagram</a></li>
+      <li><a href="mailto:missionlaunchrocketry@gmail.com">missionlaunchrocketry@gmail.com</a></li>
+      <li><a href="https://github.com/wonderspace37/mission-launch-rocketry">GitHub</a></li>
+    </ul>
+    <p>Mission Launch Rocketry is a student club at Mission College. We fly under the NAR and Tripoli safety codes.</p>
+  </div>
+</footer>
+
+</body>
+</html>
