@@ -1,0 +1,28 @@
+{
+ "length_total_mm": 245.0,
+ "nose_len_mm": 190.0,
+ "shoulder_len_mm": 55.0,
+ "body_od_mm": 57.4,
+ "shoulder_od_mm": 54.0,
+ "shoulder_id_mm": 50.0,
+ "wall_mm": 2.0,
+ "shape": "Von Karman (LD-Haack)",
+ "fineness": 3.31,
+ "tip_solid_mm": 25.0,
+ "cavity_ceiling_radius_mm": 5.9,
+ "tether": {
+  "pin": "5/16 in x 2 in hardened dowel",
+  "pin_hole_mm": 8.1,
+  "pin_z_from_shoulder_end_mm": 22.0,
+  "band_z_mm": [
+   10.0,
+   34.0
+  ],
+  "band_inner_dia_mm": 42.0,
+  "material_around_pin_mm": 6.0,
+  "pin_end_depth_below_surface_mm": 1.6
+ },
+ "nose_volume_cm3": 76.69,
+ "nose_valid": true,
+ "max_print_height_mm": 244.7
+}
