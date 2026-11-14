@@ -1,0 +1,8 @@
+# OpenRocket files are zips; tools/ork-textconv.sh turns them into readable XML for git diff
+*.ork  binary diff=ork
+# STEP is text, but diffs of it are noise
+*.step -diff linguist-generated
+*.stp  -diff linguist-generated
+*.stl  binary
+*.3mf  binary
+*.png  binary

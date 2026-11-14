@@ -1,0 +1,7 @@
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+# OpenRocket and slicer backups
+*.ork~
+*.bak
