@@ -1,0 +1,66 @@
+{
+ "coupler_bore_radius_mm": 25.15,
+ "free_length_mm": 134.2,
+ "parts": {
+  "camera RunCam Thumb Pro W": {
+   "max_radius_mm": 23.93,
+   "radial_clearance_mm": 1.22,
+   "z_range_mm": [
+    -10.0,
+    44.0
+   ],
+   "volume_outside_bore_mm3": 0.0
+  },
+  "5 V boost U3V16F5": {
+   "max_radius_mm": 5.04,
+   "radial_clearance_mm": 20.11,
+   "z_range_mm": [
+    -32.0,
+    -18.9
+   ],
+   "volume_outside_bore_mm3": 0.0
+  },
+  "Blue Raven 2": {
+   "max_radius_mm": 22.43,
+   "radial_clearance_mm": 2.72,
+   "z_range_mm": [
+    -63.0,
+    -17.3
+   ],
+   "volume_outside_bore_mm3": 0.0
+  },
+  "1S LiPo 1000 mAh": {
+   "max_radius_mm": 18.87,
+   "radial_clearance_mm": 6.28,
+   "z_range_mm": [
+    6.0,
+    56.0
+   ],
+   "volume_outside_bore_mm3": 0.0
+  },
+  "switch (arms Raven + camera branch)": {
+   "max_radius_mm": 15.31,
+   "radial_clearance_mm": 9.84,
+   "z_range_mm": [
+    -15.0,
+    -1.0
+   ],
+   "volume_outside_bore_mm3": 0.0
+  },
+  "sled": {
+   "max_radius_mm": 24.03,
+   "radial_clearance_mm": 1.12,
+   "z_range_mm": [
+    -63.0,
+    63.0
+   ],
+   "volume_outside_bore_mm3": 0.0
+  }
+ },
+ "overlaps": [],
+ "lens_face_y_mm": 21.5,
+ "lens_face_to_coupler_wall_mm": 3.65,
+ "lens_face_to_outer_surface_mm": 7.2,
+ "sled_volume_cm3": 23.67,
+ "sled_valid": true
+}

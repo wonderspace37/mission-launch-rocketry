@@ -1,0 +1,294 @@
+{
+  "tool": "printmass",
+  "version": "0.1.0",
+  "ok": true,
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "inertia": "g*mm^2 (also kg*m^2)"
+  },
+  "frame": "CAD frame of each input file; CG and inertia are about the CG, axes parallel to CAD axes",
+  "settings": {
+    "printer": "X1C",
+    "nozzle": 0.4,
+    "filament": "petg-cf",
+    "walls": 5,
+    "top_layers": 5,
+    "bottom_layers": 4,
+    "infill": 15.0,
+    "pattern": "gyroid",
+    "supports": "none"
+  },
+  "slicer": "bambu",
+  "parts": [
+    {
+      "name": "nose-cone-v2",
+      "source": "yellow-jacket/cad/nose-cone-v2/nose-cone-v2.stl",
+      "units_in": "mm",
+      "print_rotation_deg_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "frame": "CAD (input file coordinates, mm)",
+      "mass_g": 83.5425,
+      "cg_mm": [
+        0.0016,
+        0.0051,
+        86.0384
+      ],
+      "inertia_cg_g_mm2": [
+        [
+          350287.577,
+          -13.136,
+          15.707
+        ],
+        [
+          -13.136,
+          350061.653,
+          -14.478
+        ],
+        [
+          15.707,
+          -14.478,
+          44660.773
+        ]
+      ],
+      "inertia_cg_kg_m2": [
+        [
+          0.0003502875765657566,
+          -1.3136086831893102e-08,
+          1.5706736684149525e-08
+        ],
+        [
+          -1.3136086831893324e-08,
+          0.0003500616530980127,
+          -1.4477668557112286e-08
+        ],
+        [
+          1.5706736684149605e-08,
+          -1.4477668557112197e-08,
+          4.4660772965442225e-05
+        ]
+      ],
+      "principal_moments_g_mm2": [
+        44660.771,
+        350060.892,
+        350288.339
+      ],
+      "principal_axes": [
+        [
+          -5.1e-05,
+          4.7e-05,
+          1.0
+        ],
+        [
+          0.057855,
+          0.998325,
+          -4.4e-05
+        ],
+        [
+          0.998325,
+          -0.057855,
+          5.4e-05
+        ]
+      ],
+      "as_printed": {
+        "mass_g": 83.5425,
+        "cg_mm": [
+          0.0016,
+          0.0051,
+          86.0384
+        ],
+        "inertia_cg_g_mm2": [
+          [
+            350287.577,
+            -13.136,
+            15.707
+          ],
+          [
+            -13.136,
+            350061.653,
+            -14.478
+          ],
+          [
+            15.707,
+            -14.478,
+            44660.773
+          ]
+        ],
+        "inertia_cg_kg_m2": [
+          [
+            0.0003502875765657566,
+            -1.3136086831893102e-08,
+            1.5706736684149525e-08
+          ],
+          [
+            -1.3136086831893324e-08,
+            0.0003500616530980127,
+            -1.4477668557112286e-08
+          ],
+          [
+            1.5706736684149605e-08,
+            -1.4477668557112197e-08,
+            4.4660772965442225e-05
+          ]
+        ],
+        "principal_moments_g_mm2": [
+          44660.771,
+          350060.892,
+          350288.339
+        ],
+        "principal_axes": [
+          [
+            -5.1e-05,
+            4.7e-05,
+            1.0
+          ],
+          [
+            0.057855,
+            0.998325,
+            -4.4e-05
+          ],
+          [
+            0.998325,
+            -0.057855,
+            5.4e-05
+          ]
+        ]
+      },
+      "mass_by_category_g": {
+        "part": 83.5425,
+        "support": 0.0,
+        "brim_skirt": 0.0,
+        "prime_tower": 0.0,
+        "machine": 0.66
+      },
+      "mass_by_feature_g": {
+        "@start": 0.66,
+        "Inner wall": 42.186,
+        "Outer wall": 26.4518,
+        "Gap infill": 11.7464,
+        "Internal solid infill": 0.4605,
+        "Sparse infill": 2.4245,
+        "Floating vertical shell": 0.2296,
+        "Top surface": 0.0269,
+        "Overhang wall": 0.0001,
+        "Bridge": 0.0167
+      },
+      "solid_reference": {
+        "volume_cm3": 76.6275,
+        "surface_area_cm2": 607.132,
+        "solid_mass_g": 95.7843,
+        "solid_cg_mm": [
+          0.001,
+          0.0037,
+          82.831
+        ],
+        "solid_inertia_cg_g_mm2": [
+          [
+            407726.618,
+            -5.242,
+            4.628
+          ],
+          [
+            -5.242,
+            407244.04,
+            -13.501
+          ],
+          [
+            4.628,
+            -13.501,
+            51267.377
+          ]
+        ],
+        "fill_fraction": 0.8722,
+        "cg_shift_from_solid_mm": [
+          0.0006,
+          0.0014,
+          3.2074
+        ],
+        "bbox_min_mm": [
+          -28.6794,
+          -28.6647,
+          0.0
+        ],
+        "bbox_max_mm": [
+          28.6794,
+          28.6647,
+          244.7
+        ]
+      },
+      "print": {
+        "estimated_time": "2h 32m 4s; total estimated time: 2h 39m 28s",
+        "total_estimated_time": "2h 39m 28s",
+        "total_filament_weight_g": 83.87,
+        "total_filament_length_mm": 27896.07,
+        "layers": 1223.0,
+        "filament_length_part_mm": 27786.36,
+        "cost_estimate": {
+          "per_kg": 34.99,
+          "amount": 2.923
+        }
+      },
+      "placement_check_mm": 0.0692,
+      "gcode_stats": {
+        "lines": 442257,
+        "arcs": 82066,
+        "e_pushed_mm": 30882.071650000165,
+        "e_retracted_mm": 2877.803589999893,
+        "e_unpaid_retraction_mm": 1.6034499999999838,
+        "layers": 1223
+      },
+      "slicer": {
+        "name": "Bambu Studio",
+        "version": "02.07.01.62",
+        "seconds": 2.19,
+        "returncode": 0,
+        "result_code": 0,
+        "result_message": "Success."
+      },
+      "presets": {
+        "machine": "Bambu Lab X1 Carbon 0.4 nozzle",
+        "process": "0.20mm Standard @BBL X1C",
+        "filament": "Bambu PETG-CF @BBL X1C 0.4 nozzle"
+      },
+      "effective_settings": {
+        "layer_height": "0.2",
+        "initial_layer_print_height": "0.2",
+        "wall_loops": "5",
+        "top_shell_layers": "5",
+        "top_shell_thickness": "0",
+        "bottom_shell_layers": "4",
+        "bottom_shell_thickness": "0",
+        "sparse_infill_density": "15%",
+        "sparse_infill_pattern": "gyroid",
+        "top_surface_pattern": "monotonicline",
+        "bottom_surface_pattern": "monotonic",
+        "internal_solid_infill_pattern": "zig-zag",
+        "wall_generator": "classic",
+        "enable_support": "0",
+        "support_type": "tree(auto)",
+        "brim_type": "auto_brim",
+        "outer_wall_line_width": "0.42",
+        "inner_wall_line_width": "0.45",
+        "sparse_infill_line_width": "0.45",
+        "internal_solid_infill_line_width": "0.42",
+        "filament_type": "PETG-CF",
+        "filament_density": "1.25",
+        "filament_diameter": "1.75",
+        "filament_flow_ratio": "0.95",
+        "nozzle_diameter": "0.4",
+        "curr_bed_type": "Textured PEI Plate",
+        "printer_model": "Bambu Lab X1 Carbon",
+        "seam_position": "aligned",
+        "ironing_type": "no ironing"
+      },
+      "warnings": [
+        "top_shell_thickness set to 0 so top_layers is exact"
+      ]
+    }
+  ],
+  "errors": [],
+  "seconds": 2.8
+}
